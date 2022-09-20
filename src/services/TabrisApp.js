@@ -89,9 +89,9 @@ class TabrisApp {
 
   _installProductionDependencies(destination) {
     if (existsSync(join(destination, 'www', 'app', 'package-lock.json'))) {
-      proc.spawnSync('npm', ['ci', '--production'], {cwd: join(destination, 'www', 'app')});
+      proc.spawnSync('npm', ['ci', '--force'], {cwd: join(destination, 'www', 'app')});
     } else {
-      proc.spawnSync('npm', ['install', '--production'], {cwd: join(destination, 'www', 'app')});
+      proc.spawnSync('npm', ['install', '--force'], {cwd: join(destination, 'www', 'app')});
     }
   }
 
